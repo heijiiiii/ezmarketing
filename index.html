@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyNetworks - 기술로 연결된 신뢰</title>
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css" type="text/css"/>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Meta tags for SEO and SNS sharing -->
+    <meta name="description" content="26년 렌탈 전문기업 이지네트웍스. 공기질 관리, 헬스케어 솔루션으로 기술로 연결된 신뢰를 제공합니다.">
+    <meta property="og:title" content="EasyNetworks - 기술로 연결된 신뢰">
+    <meta property="og:description" content="26년 렌탈 · 에코버 · 헬스케어 전문기업">
+    <meta property="og:type" content="website">
+    
+    <style>
+        :root {
+            --color-navy-blue: #0052cc;
+            --color-sky-blue: #0065ff;
+            --color-light-blue: #f0f2f5;
+            --color-text: #172b4d;
+            --color-text-light: #42526e;
+            --color-brand-green: #2F765F;
+            --color-brand-yellow: #FBC600;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Paperlogy", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+
+
+        /* Top Banner */
+        .top-banner {
+            background: #0052cc;
+            color: white;
+            padding: 1.5rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 82, 204, 0.3);
+        }
+
+        .banner-container {
+            max-width: 320px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .banner-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0;
+            flex: 1;
+            line-height: 1.3;
+        }
+
+        .banner-date {
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            margin-left: 1rem;
+        }
+
+        /* Proposal Section */
+        .proposal-section {
+            padding: 2rem 1rem;
+            background: var(--color-navy-blue);
+            color: white;
+            text-align: center;
+        }
+
+        .proposal-container {
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .proposal-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .proposal-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .proposal-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin-top: 1rem;
+        }
+
+        .proposal-button:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.3);
+            border-color: var(--color-brand-yellow);
+            box-shadow: 0 4px 15px rgba(251, 198, 0, 0.2);
+        }
+
+        /* 제안서 썸네일 카드 */
+        .proposal-preview-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .proposal-preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(251, 198, 0, 0.3);
+            border-color: var(--color-brand-yellow);
+        }
+
+        .proposal-thumbnail-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: url('src/main.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 제안서 흰색 로고 */
+        .proposal-logo {
+            width: 120px;
+            height: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            z-index: 3;
+            position: relative;
+            transition: all 0.3s ease;
+            drop-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 호버 시 로고 효과 */
+        .proposal-preview-card:hover .proposal-logo {
+            opacity: 0.3;
+            transform: scale(1.1);
+        }
+
+        /* main.png 배경 이미지 강화 */
+        .proposal-thumbnail-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+
+
+        .proposal-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 82, 204, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(2px);
+        }
+
+        .proposal-preview-card:hover .proposal-overlay {
+            opacity: 1;
+        }
+
+        .proposal-overlay-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+        }
+
+        .proposal-overlay-icon {
+            font-size: 2.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        .proposal-overlay-content span {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .proposal-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--color-navy-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 4;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        .proposal-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .proposal-info h3 {
+            color: var(--color-navy-blue);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .proposal-info p {
+            color: var(--color-navy-blue);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            opacity: 0.8;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* 제안서 Fallback 스타일 */
+        .proposal-fallback {
+            position: absolute;
+            inset: 0;
+            background: var(--color-brand-green);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .proposal-fallback-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .proposal-fallback-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .proposal-fallback-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        /* Splash Section - 보고서 스타일 */
+        .splash-section {
+            padding: 2rem 1rem;
+            background: #ffffff;
+            min-height: auto;
+        }
+
+        .report-container {
+            max-width: 340px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0052cc;
+            margin: 0 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #0052cc;
+        }
+
+        /* 요약 섹션 */
+        .executive-summary {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #0052cc;
+        }
+
+        .summary-content p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+        }
+
+        /* KPI 섹션 */
+        .kpi-section {
+            margin-bottom: 2rem;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .kpi-item {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .kpi-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0052cc;
+            margin-bottom: 0.25rem;
+        }
+
+        .kpi-label {
+            font-size: 0.7rem;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        /* 핵심 포인트 */
+        .key-points {
+            margin-bottom: 2rem;
+        }
+
+        .points-list {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .point-item {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .point-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .point-bullet {
+            color: #0052cc;
+            font-weight: bold;
+            margin-right: 0.75rem;
+            margin-top: 0.1rem;
+        }
+
+        .point-content {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .point-content strong {
+            color: #0052cc;
+            font-weight: 600;
+        }
+
+        /* 네비게이션 버튼 */
+        .report-navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            min-height: 52px;
+        }
+
+        .nav-button.primary {
+            background: #0052cc;
+            color: white;
+            border: 2px solid #0052cc;
+        }
+
+        .nav-button.primary:hover {
+            background: #003d99;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 82, 204, 0.3);
+        }
+
+        .nav-button.secondary {
+            background: white;
+            color: #0052cc;
+            border: 2px solid #0052cc;
+        }
+
+        .nav-button.secondary:hover {
+            background: #f0f7ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 82, 204, 0.15);
+        }
+
+        .nav-button span:first-child {
+            font-size: 1.2rem;
+        }
+
+        .nav-button span:last-child {
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover span:last-child {
+            transform: translateX(3px);
+        }
+
+        /* CardNews Section */
+        .cardnews-section {
+            padding: 3rem 1rem;
+            background: var(--color-light-blue);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+            color: var(--color-navy-blue);
+            font-weight: 600;
+        }
+
+        .cardnews-container {
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .swiper {
+            width: 100%;
+            height: auto;
+            padding-bottom: 2rem;
+        }
+
+        .cardnews-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 82, 204, 0.15);
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cardnews-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(47, 118, 95, 0.2);
+            border-color: var(--color-brand-green);
+        }
+
+        .cardnews-image {
+            width: 100%;
+            height: 60%;
+            position: relative;
+            background: var(--color-light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+
+
+        .cardnews-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(47, 118, 95, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(2px);
+        }
+
+        .cardnews-card:hover .cardnews-overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+        }
+
+        .overlay-icon {
+            font-size: 2.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .overlay-content span {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* 카드뉴스 썸네일 래퍼 */
+        .cardnews-thumbnail-wrapper {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        /* 실제 카드뉴스 썸네일 */
+        .cardnews-real-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+            transition: all 0.3s ease;
+            z-index: 2;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .cardnews-real-thumbnail.loaded {
+            opacity: 1;
+        }
+
+        /* 카드뉴스 Fallback 스타일 */
+        .cardnews-fallback {
+            position: absolute;
+            inset: 0;
+            background: #0052cc;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .cardnews-card:nth-child(1) .cardnews-fallback {
+            background: #0052cc;
+        }
+
+        .cardnews-card:nth-child(2) .cardnews-fallback {
+            background: #2F765F;
+        }
+
+        .cardnews-card:nth-child(3) .cardnews-fallback {
+            background: #0065ff;
+        }
+
+        .fallback-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .fallback-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .fallback-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .cardnews-content {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cardnews-number {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: var(--color-brand-green);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .cardnews-card:hover .cardnews-number {
+            background: var(--color-brand-yellow);
+            transform: scale(1.1);
+        }
+
+        .cardnews-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-navy-blue);
+            text-align: center;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .cardnews-subtitle {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .external-link-icon {
+            position: absolute;
+            bottom: 0.75rem;
+            left: 0.75rem;
+            color: var(--color-brand-green);
+            font-size: 1.2rem;
+        }
+
+        .swiper-pagination {
+            bottom: 0 !important;
+        }
+
+        .swiper-pagination-bullet {
+            background: var(--color-navy-blue);
+            opacity: 0.3;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--color-sky-blue);
+            opacity: 1;
+        }
+
+        .swipe-hint {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+
+        /* Shorts Section */
+        .shorts-section {
+            padding: 3rem 1rem;
+            background: white;
+        }
+
+        .shorts-container {
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .shorts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .shorts-item {
+            aspect-ratio: 9/16;
+            background: var(--color-navy-blue);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* 첫 번째 쇼츠 - 고양이 썸네일 */
+        .shorts-item.cat-thumbnail {
+            background: url('src/cat.png') center/cover no-repeat;
+        }
+
+        /* 고양이 썸네일용 강화된 오버레이 */
+        .shorts-item.cat-thumbnail .shorts-overlay {
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+        }
+
+        /* 고양이 썸네일용 플레이 버튼 강화 */
+        .shorts-item.cat-thumbnail .play-button {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 두 번째 쇼츠 - 지하철 썸네일 */
+        .shorts-item.subway-thumbnail {
+            background: url('src/2_3.png') center/cover no-repeat;
+        }
+
+        /* 지하철 썸네일용 강화된 오버레이 */
+        .shorts-item.subway-thumbnail .shorts-overlay {
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+        }
+
+        /* 지하철 썸네일용 플레이 버튼 강화 */
+        .shorts-item.subway-thumbnail .play-button {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .shorts-item:hover {
+            transform: scale(1.05);
+        }
+
+        .shorts-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0.75rem;
+            color: white;
+        }
+
+        .shorts-label {
+            background: #ff0000;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            align-self: flex-start;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 12px solid #ff0000;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            margin-left: 3px;
+        }
+
+        .shorts-info {
+            text-align: center;
+        }
+
+        .shorts-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .shorts-duration {
+            font-size: 0.7rem;
+            opacity: 0.8;
+        }
+
+        .shorts-note {
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--color-text-light);
+            margin-top: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 1rem;
+            background: var(--color-navy-blue);
+            color: white;
+        }
+
+        .cta-container {
+            max-width: 320px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 1.3rem;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            min-height: 56px;
+        }
+
+        .cta-button.primary {
+            background: var(--color-sky-blue);
+            color: white;
+        }
+
+        .cta-button.primary:hover {
+            background: #0052cc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 101, 255, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: white;
+            color: var(--color-navy-blue);
+            border: 2px solid var(--color-sky-blue);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--color-light-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+
+
+
+        .brand-info {
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .brand-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .brand-description {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scrollBounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-8px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-4px);
+            }
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .splash-content,
+            .cardnews-container,
+            .shorts-container,
+            .cta-container {
+                max-width: 400px;
+            }
+            
+            .splash-title {
+                font-size: 1.8rem;
+            }
+            
+            .splash-brand {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .shorts-grid {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="banner-container">
+            <h1 class="banner-title">(주)이지네트웍스 기업 분석</h1>
+        </div>
+    </div>
+
+    <!-- Splash Section - 보고서 스타일 -->
+    <section class="splash-section">
+        <div class="report-container">
+            <!-- 요약 섹션 -->
+            <div class="executive-summary" data-aos="fade-up">
+                <h2 class="section-header">요약 (Executive Summary)</h2>
+                <div class="summary-content">
+                    <p>26년간 렌탈 업계에서 성장한 (주)이지네트웍스는 공기질 관리, 디지털 헬스케어 등 사업을 확장하며 지속적인 외형 성장을 이룩하였습니다. 향후 IoT 헬스케어 등 신사업과 ESG 경영 강화를 통해 지속가능한 경쟁력을 이어나갈 계획입니다.</p>
+                </div>
+            </div>
+
+            <!-- 핵심 성과 지표 -->
+            <div class="kpi-section" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="section-header">핵심 성과 지표 (KPIs)</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-item">
+                        <div class="kpi-icon">📈</div>
+                        <div class="kpi-value">492.9억 원</div>
+                        <div class="kpi-label">2024년 기준 매출액</div>
+                    </div>
+                    <div class="kpi-item">
+                        <div class="kpi-icon">🌍</div>
+                        <div class="kpi-value">100조 원</div>
+                        <div class="kpi-label">2025년 국내 렌탈 시장 전망</div>
+                    </div>
+                    <div class="kpi-item">
+                        <div class="kpi-icon">👥</div>
+                        <div class="kpi-value">9,000여 곳</div>
+                        <div class="kpi-label">주요 기업 및 공공기관 고객사</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 핵심 포인트 -->
+            <div class="key-points" data-aos="fade-up" data-aos-delay="400">
+                <h2 class="section-header">핵심 포인트</h2>
+                <div class="points-list">
+                    <div class="point-item">
+                        <span class="point-bullet">•</span>
+                        <div class="point-content">
+                            <strong>견고한 고객 기반:</strong> 26년간 9,000여 곳의 기업·공공기관 고객을 확보하며 안정적인 사업 기반을 구축.
+                        </div>
+                    </div>
+                    <div class="point-item">
+                        <span class="point-bullet">•</span>
+                        <div class="point-content">
+                            <strong>미래 시장 기회:</strong> 100조원 규모로 성장하는 렌탈 시장과 ESG 경영 트렌드는 새로운 성장 동력.
+                        </div>
+                    </div>
+                    <div class="point-item">
+                        <span class="point-bullet">•</span>
+                        <div class="point-content">
+                            <strong>신사업 확장 필요:</strong> 공기질 관리, AED 렌탈을 넘어 IoT 헬스케어 등 융합 서비스로의 확장이 중요.
+                        </div>
+                    </div>
+                    <div class="point-item">
+                        <span class="point-bullet">•</span>
+                        <div class="point-content">
+                            <strong>우수한 ESG 성과:</strong> 동종업계 대비 낮은 탄소배출량과 '기후행동 우수기업' 인증으로 경쟁력 확보.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- Proposal Section -->
+    <section class="proposal-section">
+        <div class="proposal-container" data-aos="fade-up">
+            <h2 class="proposal-title">🎯 EasyNetworks<br>회사분석</h2>
+            <p class="proposal-subtitle">26년 비지니스 전문성과 미래 성장 전략을<br>한눈에 확인하세요</p>
+            
+            <!-- 제안서 썸네일 카드 -->
+            <div class="proposal-preview-card" data-url="https://tinyurl.com/248wmrpp" data-aos="fade-up" data-aos-delay="300">
+                <div class="proposal-thumbnail-container">
+                    <!-- 흰색 로고 -->
+                    <img src="logo.svg" alt="EasyNetworks Logo" class="proposal-logo">
+                    
+                    <div class="proposal-overlay">
+                        <div class="proposal-overlay-content">
+                            <div class="proposal-overlay-icon">📎</div>
+                            <span>바로보기</span>
+                        </div>
+                    </div>
+                    <div class="proposal-badge">제안서</div>
+                </div>
+                <div class="proposal-info">
+                    <h3>EasyNetworks 회사분석</h3>
+                    <p>26년 비즈니스 전문성 · 미래 성장 전략</p>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <!-- CardNews Section -->
+    <section id="cardnews-section" class="cardnews-section">
+        <div class="cardnews-container">
+            <h2 class="section-title" data-aos="fade-up">3가지 카드뉴스로 보는<br>EasyNetworks</h2>
+            
+            <div class="swiper cardnews-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="cardnews-card" data-url="https://tinyurl.com/24d4askx">
+                            <div class="cardnews-image">
+                                <div class="cardnews-number">1</div>
+                                <div class="external-link-icon">🔗</div>
+                                <div class="cardnews-thumbnail-wrapper">
+                                    <img src="src/1.png" class="cardnews-real-thumbnail loaded" data-url="https://tinyurl.com/24d4askx" alt="렌탈 전문성 카드뉴스" loading="lazy">
+                                    <div class="cardnews-fallback">
+                                        <div class="fallback-icon">📋</div>
+                                        <div class="fallback-title">렌탈 전문성</div>
+                                        <div class="fallback-subtitle">26년 경험과 신뢰</div>
+                                    </div>
+                                </div>
+                                <div class="cardnews-overlay">
+                                    <div class="overlay-content">
+                                        <div class="overlay-icon">📋</div>
+                                        <span>클릭해서 크게 보기</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardnews-content">
+                                <h3 class="cardnews-title">26년 렌탈 전문성으로<br>만든 신뢰</h3>
+                                <p class="cardnews-subtitle">EasyNetworks만의<br>차별화된 서비스 경쟁력</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="cardnews-card" data-url="https://tinyurl.com/256z25vc">
+                            <div class="cardnews-image">
+                                <div class="cardnews-number">2</div>
+                                <div class="external-link-icon">🔗</div>
+                                <div class="cardnews-thumbnail-wrapper">
+                                    <img src="src/2.png" class="cardnews-real-thumbnail loaded" data-url="https://tinyurl.com/256z25vc" alt="공기 정화 기술 카드뉴스" loading="lazy">
+                                    <div class="cardnews-fallback">
+                                        <div class="fallback-icon">🌬️</div>
+                                        <div class="fallback-title">공기 정화</div>
+                                        <div class="fallback-subtitle">첨단 IoT 기술</div>
+                                    </div>
+                                </div>
+                                <div class="cardnews-overlay">
+                                    <div class="overlay-content">
+                                        <div class="overlay-icon">🌬️</div>
+                                        <span>클릭해서 크게 보기</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardnews-content">
+                                <h3 class="cardnews-title">첨단 공기 정화<br>기술력</h3>
+                                <p class="cardnews-subtitle">혁신적인 필터 기술과<br>IoT 스마트팩토리</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="cardnews-card" data-url="https://tinyurl.com/2y5n8qc4">
+                            <div class="cardnews-image">
+                                <div class="cardnews-number">3</div>
+                                <div class="external-link-icon">🔗</div>
+                                <div class="cardnews-thumbnail-wrapper">
+                                    <img src="src/3 (2).png" class="cardnews-real-thumbnail loaded" data-url="https://tinyurl.com/2y5n8qc4" alt="미래 전략 카드뉴스" loading="lazy">
+                                    <div class="cardnews-fallback">
+                                        <div class="fallback-icon">🚀</div>
+                                        <div class="fallback-title">미래 전략</div>
+                                        <div class="fallback-subtitle">디지털 헬스케어</div>
+                                    </div>
+                                </div>
+                                <div class="cardnews-overlay">
+                                    <div class="overlay-content">
+                                        <div class="overlay-icon">🚀</div>
+                                        <span>클릭해서 크게 보기</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardnews-content">
+                                <h3 class="cardnews-title">미래 성장 동력<br>전략</h3>
+                                <p class="cardnews-subtitle">디지털 헬스케어와<br>ESG 경영 혁신</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            <p class="swipe-hint">← 3개 카드뉴스를 스와이프해보세요 →</p>
+        </div>
+    </section>
+
+    <!-- Shorts Section -->
+    <section id="shorts-section" class="shorts-section">
+        <div class="shorts-container">
+            <h2 class="section-title" data-aos="fade-up">Youtube Shorts<br>광고</h2>
+            
+            <div class="shorts-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="shorts-item cat-thumbnail" onclick="playShorts(1)">
+                    <div class="shorts-overlay">
+                        <div class="shorts-label">Shorts</div>
+                        <div class="shorts-info">
+                            <div class="shorts-title">고양이 털의 여정</div>
+                            <div class="shorts-duration">에코버 필요성</div>
+                        </div>
+                    </div>
+                    <div class="play-button"></div>
+                </div>
+                
+                <div class="shorts-item subway-thumbnail" onclick="playShorts(2)">
+                    <div class="shorts-overlay">
+                        <div class="shorts-label">Shorts</div>
+                        <div class="shorts-info">
+                            <div class="shorts-title">지하철 필수템 3가지</div>
+                            <div class="shorts-duration">생활 꿀팁</div>
+                        </div>
+                    </div>
+                    <div class="play-button"></div>
+                </div>
+            </div>
+            
+            <p class="shorts-note">클릭하면 YouTube Shorts로 이동합니다</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title" data-aos="fade-up">Marketing! Branding!<br>더 알아보고 싶으신가요?</h2>
+            
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="mailto:leejihye210@gmail.com?subject=EasyNetworks 문의사항&body=안녕하세요! EasyNetworks 관련 문의드립니다." class="cta-button secondary">
+                    <span>💬</span>
+                    <span>문의하기</span>
+                    <span>↗</span>
+                </a>
+            </div>
+            
+            <div class="brand-info" data-aos="fade-up" data-aos-delay="600">
+                <!-- 푸터 텍스트 제거됨 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+
+        // Open CardNews function (전역 함수로 선언)
+        window.openCardNews = function(url) {
+            console.log('Opening cardnews:', url); // 디버깅용
+            window.open(url, '_blank');
+        };
+
+        // Initialize Swiper
+        const cardnewsSwiper = new Swiper('.cardnews-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            effect: 'slide',
+            speed: 800,
+            allowTouchMove: true,
+            simulateTouch: true,
+        });
+
+        // 카드뉴스 & 제안서 클릭 이벤트 추가 (이벤트 위임 방식)
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function(e) {
+                // 카드뉴스 클릭
+                const cardElement = e.target.closest('.cardnews-card');
+                if (cardElement) {
+                    const url = cardElement.getAttribute('data-url');
+                    if (url) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.open(url, '_blank');
+                    }
+                }
+
+                // 제안서 썸네일 클릭
+                const proposalElement = e.target.closest('.proposal-preview-card');
+                if (proposalElement) {
+                    const url = proposalElement.getAttribute('data-url');
+                    if (url) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.open(url, '_blank');
+                    }
+                }
+            });
+
+                        // 카드뉴스 썸네일이 SVG로 미리 로드되어 있음
+            // 추후 실제 카드뉴스 이미지로 교체 가능
+        });
+
+        // Play Shorts function
+        function playShorts(videoId) {
+            const videoUrls = {
+                1: 'https://youtube.com/shorts/PzyKA5HGwRA?feature=share',
+                2: 'https://www.youtube.com/shorts/KFD0ck5HF8Q'
+            };
+            
+            // YouTube Shorts로 연결
+            if (videoUrls[videoId]) {
+                window.open(videoUrls[videoId], '_blank');
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

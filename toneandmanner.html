@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>㈜이지네트웍스 기업 분석 및 성장 전략</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css" type="text/css"/>
+    <style>
+        body {
+            font-family: "Paperlogy", -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* Professional Blue Background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #172b4d; /* Professional Blue Text */
+        }
+        .container {
+            width: 90vw;
+            max-width: 1280px;
+            height: 95vh;
+            max-height: 990px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #0052cc, #0065ff); /* Professional Blue Primary/Accent */
+            color: white;
+            font-size: 1em;
+            font-weight: 700;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .header-title {
+            font-size: 2.1em;
+        }
+        .header-date {
+            font-size: 1.5em;
+        }
+        .main-content {
+            display: flex;
+            flex-grow: 1;
+            padding: 25px 30px;
+            gap: 25px;
+        }
+        .left-panel {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .right-panel {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+        .card-title {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #0052cc; /* Professional Blue Primary */
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ddeeff; /* Lighter border for title */
+            padding-bottom: 8px;
+        }
+        .summary-text {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            height: 80px; /* Fixed height for summary */
+            overflow: hidden;
+        }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .kpi-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #42526e; /* Slightly darker text for KPIs */
+        }
+        .kpi-item span {
+            font-size: 1.8em;
+            color: #0065ff; /* Professional Blue Accent */
+        }
+        .kpi-value {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #172b4d; /* Professional Blue Text */
+        }
+        .chart-placeholder {
+            height: 250px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+            color: #0052cc; /* Primary color for chart text */
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f8ff;
+            border: 1px solid #ddeeff;
+        }
+        .chart-bar-container {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .chart-bar {
+            flex: 1;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            color: white;
+            font-size: 1.1em;
+            padding: 8px 0;
+            font-weight: 600;
+        }
+        .chart-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        .key-points ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .key-points li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        .key-points li::before {
+            content: '•';
+            color: #0065ff; /* Accent color for bullet points */
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .highlight-message {
+            background-color: #eaf2ff; /* Lighter blue background for highlight */
+            border-left: 5px solid #0052cc; /* Primary color border */
+            padding: 15px;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #0052cc; /* Primary color for highlight text */
+            text-align: center;
+            border-radius: 8px;
+        }
+        footer {
+            padding: 10px 30px;
+            background-color: #f0f2f5; /* Professional Blue Background */
+            text-align: right;
+            font-size: 0.85em;
+            color: #6b7280; /* Gray text for footer */
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">㈜이지네트웍스 기업 분석 및 전략 제안</div>
+        </header>
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="card">
+                    <div class="card-title">요약 (Executive Summary)</div>
+                    <p class="summary-text">
+                        26년간 렌탈 업계에서 성장한 ㈜이지네트웍스는 공기질 관리, 디지털 헬스케어로 사업을 확장하며 꾸준한 외형 성장을 이뤘습니다. 그러나 최근 영업이익률 급락이라는 수익성 과제에 직면했으며, 향후 IoT 헬스케어 등 신사업과 ESG 경영을 통해 지속 가능한 성장을 모색해야 합니다.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-title">핵심 성과 지표 (KPIs)</div>
+                    <div class="kpi-grid">
+                        <div class="kpi-item">
+                            <span>📈</span>
+                            <div>
+                                <div class="kpi-value">492.9억 원</div>
+                                <div>2024년 기준 매출액</div>
+                            </div>
+                        </div>
+                        <div class="kpi-item">
+                            <span>🌐</span>
+                            <div>
+                                <div class="kpi-value">100조 원</div>
+                                <div>2025년 국내 렌탈 시장 전망</div>
+                            </div>
+                        </div>
+                        <div class="kpi-item">
+                            <span>📉</span>
+                            <div>
+                                <div class="kpi-value">0.8%</div>
+                                <div>2024년 영업이익률 (수익성 악화)</div>
+                            </div>
+                        </div>
+                        <div class="kpi-item">
+                            <span>👥</span>
+                            <div>
+                                <div class="kpi-value">9,000여 곳</div>
+                                <div>주요 기업 및 공공기관 고객사</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">데이터 시각화: 신사업 기회 매력도 분석</div>
+                    <div class="chart-placeholder">
+                        <div class="chart-title">주요 신사업 시장성 및 실현가능성 비교</div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar" style="height: 100%; background-color: #0052cc;"><div>IoT 헬스케어<br>(매우 높음)</div></div>
+                            <div class="chart-bar" style="height: 80%; background-color: #0065ff;"><div>스마트팩토리<br>(높음)</div></div>
+                            <div class="chart-bar" style="height: 80%; background-color: #4c9aff;"><div>친환경 솔루션<br>(높음)</div></div>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.9em; color: #6b7280;">(자체 분석 기반, IoT 헬스케어 플랫폼의 시장 잠재력이 가장 높게 평가됩니다.)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="card key-points" style="flex-grow: 1;">
+                    <div class="card-title">핵심 포인트</div>
+                    <ul>
+                        <li><p><strong>견고한 고객 기반:</strong> 26년간 9,000여 곳의 기업·공공기관 고객을 확보하며 안정적인 사업 기반을 구축.</p></li>
+                        <li><p><strong>수익성 악화:</strong> 매출은 지속 성장했으나, 2024년 영업이익률이 0.8%로 급락하여 비용 구조 개선 시급.</p></li>
+                        <li><p><strong>미래 시장 기회:</strong> 100조원 규모로 성장하는 렌탈 시장과 ESG 경영 트렌드는 새로운 성장 동력.</p></li>
+                        <li><p><strong>신사업 확장 필요:</strong> 공기질 관리, AED 렌탈을 넘어 IoT 헬스케어 등 융합 서비스로의 확장이 중요.</p></li>
+                        <li><p><strong>우수한 ESG 성과:</strong> 동종업계 대비 낮은 탄소배출량과 '기후성과 우수기업' 인증으로 경쟁력 확보.</p></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title">전략적 제언</div>
+                    <div class="highlight-message">
+                        이지네트웍스는 단기적 수익성 개선과 함께, 기존 사업의 디지털 전환 및 IoT 헬스케어 등 고부가가치 신사업 투자를 통해 지속가능한 성장을 확보해야 합니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            출처: ㈜이지네트웍스 종합 기업 분석 보고서
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# 운영체제 생성 파일
+.DS_Store
+Thumbs.db
+
+# 에디터 설정 파일
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 로그 파일
+*.log
+
+# 임시 파일
+*.tmp
+*.temp
+
+# 백업 파일
+*.bak
+*.backup
+
+# 기타 개발 도구
+node_modules/
+.env
+.env.local 
